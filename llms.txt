@@ -1,0 +1,29 @@
+# Helicon Works
+
+> AI consulting from Rohit Sharma: production AI systems — agents, automation, evals, guardrails, governance — for companies that want AI doing real work, not stalled pilots. Operator background: co-founder of Kanmon (embedded lending, $23M+ raised from Bessemer, Homebrew, Inspired, FIS), ex-VP Product & Design at Funding Circle (56x growth, $9.5B+ originated, LSE IPO), GM at Plastiq, Director of PM at Dun & Bradstreet.
+
+## Positioning
+
+Most AI consulting ends in a deck. This practice ends in production. The thesis: the model isn't the bottleneck — the harness is (the tool layer, evals, guardrails, and governance that let AI do real work safely).
+
+## Offers
+
+- AI Opportunity Audit — 2–3 weeks, fixed fee: ranked roadmap of AI wins plus a working prototype of the #1 item
+- Agentic Engineering Transformation — 4–8 weeks embedded with engineering orgs: coding-agent rollout, MCP tool layer over internal systems, AI-native SDLC, measured on cycle time
+- Ops Automation Build — 4–8 weeks for finance/ops/compliance: one production workflow, or a full embedded "AI employee" that learns the business and takes over jobs — with permissions, evals, and an audit trail
+- Fractional AI Lead — monthly retainer: own the AI roadmap, review builds, vendor/model decisions, exec reporting
+
+## Proof (qualitative)
+
+- Autonomous underwriting: one command produces a bank-grade credit memo with non-waivable credit rules applied identically to every file
+- Daily portfolio risk monitor: agent-prototyped signals, deterministic SQL in production, watchlist in Slack before the team logs on
+- Company-wide Slack agent that builds its own skill library (RFP analysis: an afternoon → minutes)
+- Customer-facing agent and document parsing in a lending transaction path, with evals, model fallbacks, and circuit breakers
+- losaltos.space — a self-maintaining neighborhood directory built end to end with agents in four days
+
+## Contact
+
+- Email: rohit@thesharmas.org
+- Writing: https://monetarymusings.substack.com
+- LinkedIn: https://www.linkedin.com/in/rohitnsharma
+- GitHub: https://github.com/thesharmas

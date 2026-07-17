@@ -1,0 +1,14 @@
+/* TEAM */
+Operator, builder: Rohit Sharma
+Contact: rohit@thesharmas.org
+Writing: monetarymusings.substack.com
+
+/* SITE */
+Stack: one static index.html — no framework, no build step
+Built with: Claude Code (agent-built, human-reviewed)
+Type: Schibsted Grotesk, Source Serif 4, Spline Sans Mono
+Hosting: GitHub Pages
+Analytics: PostHog, semantic events
+
+/* COLOPHON */
+Helicon: home of the Muses — and of Hari Seldon.

@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Helicon Works — AI that works in production</title>
-<meta name="description" content="The model isn't your bottleneck. The harness is. AI consulting from an operator whose own company runs on it — agents, evals, guardrails, in production every day.">
+<meta name="description" content="Most AI consulting ends in a deck. Mine ends in production. Working AI systems — agents, automation, evals, governance — from an operator who has shipped them.">
 <meta property="og:title" content="Helicon Works — AI that works in production">
-<meta property="og:description" content="The model isn't your bottleneck. The harness is.">
+<meta property="og:description" content="Most AI consulting ends in a deck. Mine ends in production.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,12 +89,19 @@
   .hero .wrap > * { min-width: 0; }
   .hero h1 {
     color: var(--paper);
-    font-size: clamp(36px, 5.2vw, 58px);
+    font-size: clamp(33px, 4.6vw, 52px);
     font-weight: 800;
     line-height: 1.04;
     margin-bottom: 24px;
   }
-  .hero h1 em { font-style: normal; color: var(--amber); }
+  .hero h1 em {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 0.97em;
+    letter-spacing: 0;
+    color: var(--amber);
+  }
   .hero .sub { color: var(--dim); font-size: 19px; max-width: 520px; margin-bottom: 36px; }
   .hero .sub strong { color: var(--paper); font-weight: 600; }
   .btn {
@@ -164,6 +171,7 @@
   }
   .thesis .big strong { color: var(--amber-deep); font-weight: 600; }
   .thesis .rest { max-width: 700px; margin-top: 22px; }
+  .sec-lead { max-width: 660px; margin: -4px 0 30px; }
 
   /* Doors + offers */
   .doors { background: var(--paper-2); border-bottom: 1px solid var(--line); }
@@ -189,6 +197,7 @@
   .case { border: 1px solid var(--line); border-radius: 8px; padding: 26px 26px 24px; background: var(--paper); }
   .case.dark { background: var(--ink); border-color: transparent; }
   .case.dark h3 { color: var(--paper); }
+  .case h3 a { color: inherit; }
   .case.dark p { color: var(--dim); }
   .case .k { font-family: 'Spline Sans Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber-deep); display: block; margin-bottom: 12px; }
   .case.dark .k { color: var(--amber); }
@@ -272,8 +281,8 @@
   <div class="wrap">
     <div>
       <span class="label">AI consulting, from an operator</span>
-      <h1>The model isn't your bottleneck. <em>The harness is.</em></h1>
-      <p class="sub">I'm <strong>Rohit Sharma</strong>. My lending company runs on AI — underwriting credit, watching the portfolio, answering customers — in production, every day. I help teams ship the same.</p>
+      <h1>Most AI consulting ends in a deck. <em>Mine ends in production.</em></h1>
+      <p class="sub">I'm <strong>Rohit Sharma</strong> — 20 years operating fintech companies, the last two building AI that underwrites loans, watches a portfolio every morning, and answers customers. I build working systems, not recommendations.</p>
       <a class="btn" href="#contact">Book an intro call</a>
       <a class="btn ghost" href="#proof">See the proof</a>
     </div>
@@ -302,10 +311,10 @@
 
 <section class="thesis">
   <div class="wrap">
-    <span class="label">The thesis</span>
-    <p class="big">Every stalled AI pilot has the same autopsy: the demo worked, production never came. The missing piece was never a smarter model — <strong>it's the harness</strong>: the tool layer, the evals, the guardrails, the governance that let AI touch real work safely.</p>
+    <span class="label">How I think</span>
+    <p class="big">Every company has tried AI. Almost none have AI they rely on. The difference isn't the model — <strong>it's the harness</strong>: the tool layer, the evals, the guardrails, the governance that let AI do real work safely.</p>
     <div class="rest">
-      <p>I took my own company from AI-written marketing emails to AI underwriting credit. I don't hand you a deck and a list of implementation partners — I build the harness with you, strategy through code.</p>
+      <p>I've built that end to end — pilots that became systems a lender relied on every day. No handoff to "implementation partners": I build the harness with you, strategy through code.</p>
     </div>
   </div>
 </section>
@@ -329,13 +338,13 @@
       <div class="door">
         <span class="tag">For finance, ops &amp; compliance teams</span>
         <h3>Run leaner</h3>
-        <p>Teams drowning in manual knowledge work. You want agents doing real work — with the audit trail to prove it.</p>
+        <p>Teams drowning in manual knowledge work. The flagship: an <strong>AI employee</strong> — an always-on agent embedded in your company that learns the business and takes over jobs, one at a time.</p>
         <ul>
-          <li>Production agents for close, reconciliation, monitoring, documents</li>
-          <li>Governance in code: non-waivable rules, applied identically</li>
-          <li>Evals and observability you can show your auditor</li>
+          <li>Lives in Slack and your systems; builds its own skills as it learns</li>
+          <li>Targeted builds: close, reconciliation, monitoring, document analysis</li>
+          <li>Permissions, evals, and an audit trail — show it to your auditor</li>
         </ul>
-        <p class="engage"><strong>Ops Automation Build</strong> · 4–8 wks · pilot → production, end to end</p>
+        <p class="engage"><strong>Ops Automation Build</strong> · 4–8 wks · one workflow, or a full AI employee</p>
       </div>
     </div>
     <p class="startline"><strong>Not sure which door?</strong> Start with the <strong>AI Opportunity Audit</strong> — 2–3 weeks, fixed fee. A ranked roadmap of AI wins, plus a working prototype of the #1 item. For ongoing help, ask about the <strong>Fractional AI Lead</strong> retainer.</p>
@@ -346,36 +355,37 @@
   <div class="wrap">
     <span class="label">Proof, not promises</span>
     <h2>Built, shipped, still running</h2>
+    <p class="sec-lead">Most of it built at the fintech I co-founded — pilots that became systems the business relies on daily.</p>
     <div class="grid">
       <div class="case dark">
         <span class="k">Underwriting</span>
         <h3>The autonomous underwriter</h3>
-        <p>One command, one bank-grade credit memo: full banking history, both bureaus, tax returns — non-waivable rules applied identically to every file. Days of analyst work, done in minutes.</p>
+        <p>One command produces a bank-grade credit memo — non-waivable rules applied identically to every file.</p>
       </div>
       <div class="case">
         <span class="k">Portfolio risk</span>
         <h3>Nobody watches the book at 6am. We do now.</h3>
-        <p>Agents prototyped the risk signals; deterministic SQL runs them. The watchlist is in Slack before the team logs on.</p>
+        <p>A prioritized risk watchlist lands in Slack before the team logs on.</p>
       </div>
       <div class="case">
-        <span class="k">Company-wide ops</span>
+        <span class="k">The AI employee</span>
         <h3>One agent, whole company</h3>
-        <p>A Slack agent across risk, ops, and go-to-market, building its own skill library. RFP analysis went from an afternoon to minutes.</p>
+        <p>An embedded agent across risk, ops, and go-to-market that builds its own skills as it learns. RFP analysis went from an afternoon to minutes.</p>
       </div>
       <div class="case">
         <span class="k">Customer-facing</span>
         <h3>AI in the product, safely</h3>
-        <p>A customer-facing agent and document parsing in the transaction path — evals, model fallbacks, circuit breakers. When a model provider has a bad day, customers don't notice.</p>
+        <p>An agent in the transaction path, with fallbacks and circuit breakers — model outages customers never see.</p>
       </div>
       <div class="case dark">
         <span class="k">Side quest</span>
-        <h3>losaltos.space</h3>
-        <p>2,000 buried WhatsApp messages became a self-maintaining neighborhood directory in four days — 220+ visitors the first weekend, built end to end with agents.</p>
+        <h3><a href="https://losaltos.space">losaltos.space</a></h3>
+        <p>2,000 buried WhatsApp messages became a self-maintaining neighborhood directory in four days.</p>
       </div>
       <div class="case">
         <span class="k">The discipline</span>
         <h3>De-LLM-ing</h3>
-        <p>Often the best move is removing the LLM: prototype with agents, then ship deterministic code. Cheaper, faster, auditable — and it never hallucinates.</p>
+        <p>Often the best move is removing the LLM: prototype with agents, ship deterministic code.</p>
       </div>
     </div>
   </div>
@@ -408,7 +418,7 @@
     <div class="cols">
       <div>
         <p>Twenty years building lending and data products: first product hire at what became Funding Circle US (56x growth, $9.5B+ originated, LSE IPO), GM at Plastiq, D&amp;B's flagship API line — now co-founder of Kanmon, a VC-backed embedded lender.</p>
-        <p>For the last two years I've led Kanmon's shift to AI-native, and built the underwriting agents, tool layer, and eval frameworks with my own hands. MS in Computer Science, MBA. I speak both rooms.</p>
+        <p>Over two years I led Kanmon's shift to AI-native — and built the underwriting agents, tool layer, and eval frameworks with my own hands. MS in Computer Science, MBA. I speak both rooms.</p>
         <p>My house runs on six AI agents. I write about money and machines at <a href="https://monetarymusings.substack.com">Monetary Musings</a>.</p>
       </div>
       <div class="side">
@@ -437,7 +447,7 @@
 <div class="colophon">
   <div class="wrap">
     <span>© 2026 Helicon Works · Rohit Sharma</span>
-    <span><a href="https://monetarymusings.substack.com">Substack</a> · <a href="https://www.linkedin.com/in/rohitnsharma">LinkedIn</a> · <a href="https://github.com/thesharmas">GitHub</a></span>
+    <span><a href="https://monetarymusings.substack.com">Substack</a> · <a href="https://www.linkedin.com/in/rohitnsharma">LinkedIn</a> · <a href="https://github.com/thesharmas">GitHub</a> · <a href="/llms.txt" class="mono">llms.txt</a> · <a href="/humans.txt" class="mono">humans.txt</a></span>
     <span class="mono" style="font-size:12px;">Helicon: home of the Muses — and of Hari Seldon.</span>
   </div>
 </div>
