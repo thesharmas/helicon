@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helicon Works — AI that works in production</title>
+<meta name="description" content="AI consulting from an operator who ships it. Agents, workflows, and product features that run every day — with the evals, guardrails, and governance that make that safe.">
+<meta property="og:title" content="Helicon Works — AI that works in production">
+<meta property="og:description" content="The model isn't your bottleneck. The harness is. AI consulting from an operator who ships it.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F4F0E6;
+    --ink: #0F0F0D;
+    --olive: #2A3300;
+    --olive-mid: #3A4A00;
+    --lime: #C8E400;
+    --orange: #C4491E;
+    --tan: #E8E0CF;
+    --body: #3A382E;
+    --max: 1080px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--body);
+    font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  section { padding: 72px 0; }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--orange);
+    display: block;
+    margin-bottom: 18px;
+  }
+  h1, h2, h3 { color: var(--olive); font-weight: 600; letter-spacing: -0.01em; }
+  h2 { font-size: clamp(28px, 4vw, 40px); line-height: 1.15; margin-bottom: 22px; }
+  h3 { font-size: 19px; margin-bottom: 8px; }
+  p + p { margin-top: 1em; }
+  .accent-o { color: var(--orange); }
+  .accent-l { color: var(--lime); }
+
+  /* Top bar */
+  .topbar {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 18px 0;
+  }
+  .topbar .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-weight: 700; font-size: 17px; color: var(--cream); text-decoration: none; letter-spacing: 0.01em; }
+  .logo span { color: var(--lime); }
+  .nav a { color: var(--cream); opacity: 0.75; text-decoration: none; font-size: 14px; margin-left: 22px; }
+  .nav a:hover { opacity: 1; }
+  .nav a.cta { opacity: 1; color: var(--lime); }
+
+  /* Hero */
+  .hero { background: var(--olive); position: relative; overflow: hidden; padding: 110px 0 90px; }
+  .hero::after {
+    content: '';
+    position: absolute; top: -40%; right: -10%;
+    width: 55%; height: 200%;
+    background: linear-gradient(115deg, transparent 45%, rgba(244,240,230,0.06) 50%, transparent 56%);
+    pointer-events: none;
+  }
+  .hero h1 {
+    color: var(--cream);
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1.06;
+    font-weight: 600;
+    max-width: 850px;
+    margin-bottom: 26px;
+  }
+  .hero h1 em { font-style: normal; color: var(--lime); }
+  .hero .sub { color: var(--cream); opacity: 0.85; font-size: 19px; max-width: 640px; margin-bottom: 38px; }
+  .btn {
+    display: inline-block;
+    background: var(--lime); color: var(--ink);
+    font-weight: 600; font-size: 16px;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 3px;
+  }
+  .btn:hover { filter: brightness(1.06); }
+  .btn.ghost { background: transparent; color: var(--cream); border: 1px solid rgba(244,240,230,0.4); margin-left: 14px; }
+  .hero .eyebrow { color: var(--lime); }
+
+  /* Credential bar */
+  .cred { background: var(--ink); padding: 34px 0; }
+  .cred .wrap { display: flex; flex-wrap: wrap; gap: 28px 56px; align-items: baseline; }
+  .cred .item { color: var(--cream); }
+  .cred .num { font-size: 26px; font-weight: 700; color: var(--lime); display: block; line-height: 1.1; }
+  .cred .lbl { font-size: 13px; opacity: 0.65; }
+
+  /* Thesis */
+  .thesis .big {
+    font-size: clamp(21px, 2.8vw, 27px);
+    line-height: 1.45;
+    color: var(--olive);
+    max-width: 880px;
+  }
+  .thesis .big strong { color: var(--orange); font-weight: 600; }
+  .thesis .rest { max-width: 720px; margin-top: 26px; }
+
+  /* Doors */
+  .doors { background: var(--tan); }
+  .door-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 12px; }
+  .door {
+    background: var(--cream);
+    border-top: 3px solid var(--orange);
+    padding: 34px 30px;
+  }
+  .door h3 { font-size: 24px; margin-bottom: 14px; }
+  .door .tag { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 10px; }
+  .door ul { margin: 16px 0 0 0; list-style: none; }
+  .door li { padding-left: 22px; position: relative; margin-bottom: 10px; }
+  .door li::before { content: '→'; position: absolute; left: 0; color: var(--orange); }
+
+  /* Case studies */
+  .cases .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .case {
+    background: var(--tan);
+    padding: 30px 28px;
+  }
+  .case.dark { background: var(--olive); }
+  .case.dark h3 { color: var(--lime); }
+  .case.dark p { color: rgba(244,240,230,0.88); }
+  .case .k { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 12px; }
+  .case.dark .k { color: var(--lime); opacity: 0.9; }
+  .case p { font-size: 15.5px; }
+
+  /* Workbench */
+  .bench { background: var(--ink); }
+  .bench h2 { color: var(--cream); }
+  .bench .lead { color: rgba(244,240,230,0.8); max-width: 640px; margin-bottom: 40px; }
+  .bench .lead strong { color: var(--lime); font-weight: 600; }
+  .bench .row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; padding: 16px 0; border-top: 1px solid rgba(244,240,230,0.14); }
+  .bench .row .lbl {
+    font-family: 'IBM Plex-Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--orange);
+    flex: 0 0 210px;
+  }
+  .chip {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    background: rgba(244,240,230,0.08);
+    color: var(--cream);
+    padding: 5px 12px;
+    border-radius: 3px;
+  }
+  .chip.hot { background: var(--olive-mid); color: var(--lime); }
+
+  /* Offers */
+  .offers .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 8px; }
+  .offer { background: var(--tan); padding: 28px 24px; display: flex; flex-direction: column; }
+  .offer .k { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
+  .offer h3 { margin-bottom: 10px; }
+  .offer p { font-size: 15px; flex: 1; }
+  .offer .dur { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--olive); margin-top: 18px; }
+
+  /* Principles */
+  .principles .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 48px; max-width: 900px; }
+  .pr { padding: 20px 0; border-top: 1px solid rgba(42,51,0,0.18); }
+  .pr h3 { font-size: 17px; }
+  .pr p { font-size: 15px; }
+
+  /* About */
+  .about { background: var(--tan); }
+  .about .cols { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; }
+  .about .side { background: var(--cream); padding: 26px 24px; align-self: start; }
+  .about .side .k { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 12px; }
+  .about .side ul { list-style: none; }
+  .about .side li { font-size: 14.5px; padding: 7px 0; border-bottom: 1px solid rgba(42,51,0,0.1); }
+  .about .side li:last-child { border-bottom: none; }
+
+  /* Footer CTA */
+  .foot { background: var(--olive); padding: 90px 0; }
+  .foot h2 { color: var(--cream); font-size: clamp(30px, 4.5vw, 46px); max-width: 720px; }
+  .foot p { color: rgba(244,240,230,0.85); max-width: 560px; margin: 18px 0 34px; }
+  .colophon { background: var(--ink); padding: 26px 0; }
+  .colophon .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .colophon span, .colophon a { font-size: 13px; color: rgba(244,240,230,0.55); text-decoration: none; }
+  .colophon a:hover { color: var(--lime); }
+
+  @media (max-width: 800px) {
+    .door-grid, .cases .grid, .offers .grid, .principles .grid, .about .cols { grid-template-columns: 1fr; }
+    .bench .row .lbl { flex-basis: 100%; }
+    .nav a:not(.cta) { display: none; }
+    section { padding: 56px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#">helicon<span>works</span></a>
+    <nav class="nav">
+      <a href="#proof">Proof</a>
+      <a href="#services">Services</a>
+      <a href="#workbench">Workbench</a>
+      <a href="#about">About</a>
+      <a class="cta" href="#contact">Book a call →</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">AI Consulting · From an operator who ships it</span>
+    <h1>The model isn't your bottleneck.<br><em>The harness is.</em></h1>
+    <p class="sub">I'm Rohit Sharma — co-founder of an embedded lending company where AI underwrites loans, watches the portfolio every morning, and answers customers in production. I help teams do the same: ship AI that works every day, not just in the demo.</p>
+    <a class="btn" href="#contact">Book an intro call</a>
+    <a class="btn ghost" href="#proof">See the proof</a>
+  </div>
+</header>
+
+<div class="cred">
+  <div class="wrap">
+    <div class="item"><span class="num">$23M+</span><span class="lbl">raised as co-founder, Kanmon — Bessemer, Homebrew, Inspired, FIS</span></div>
+    <div class="item"><span class="num">56x</span><span class="lbl">growth as VP Product, Funding Circle — through IPO</span></div>
+    <div class="item"><span class="num">$9.5B+</span><span class="lbl">loans originated on products my teams built</span></div>
+    <div class="item"><span class="num">20+ yrs</span><span class="lbl">building fintech &amp; data products — D&amp;B, Plastiq, Dell</span></div>
+  </div>
+</div>
+
+<section class="thesis" id="thesis">
+  <div class="wrap">
+    <span class="eyebrow">The thesis</span>
+    <p class="big">Over two years I took my own company from AI-written marketing emails to an AI-native lender — agents underwriting credit, monitoring the portfolio, and shipping to customers. The lesson from every era was the same: <strong>the models kept getting smarter; the real work was wiring them into the business.</strong></p>
+    <div class="rest">
+      <p>Capability was never the bottleneck. Reliability is. The companies winning with AI aren't the ones with the cleverest prompts — they're the ones that built the harness: the tool layer, the evals, the guardrails, the governance that let AI touch real work safely.</p>
+      <p>That's what I build. And because I've done it end to end at my own company — strategy through architecture through code through production — I don't hand you a deck and a list of implementation partners. I ship it with you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="doors" id="doors">
+  <div class="wrap">
+    <span class="eyebrow">Two ways companies find me</span>
+    <h2>Ship faster. Run leaner.</h2>
+    <div class="door-grid">
+      <div class="door">
+        <span class="tag">For engineering orgs</span>
+        <h3>Ship faster</h3>
+        <p>Your software company is 10+ years old and your dev practices predate AI. You want agentic engineering that actually sticks — not a Copilot license and a shrug.</p>
+        <ul>
+          <li>Coding-agent rollout that survives your codebase — Claude Code, Codex CLI, Cursor</li>
+          <li>An MCP tool layer over your internal systems: build it once, swap harnesses freely</li>
+          <li>AI-native SDLC: specs → agents → review gates you can trust</li>
+          <li>Measured on cycle time, not vibes</li>
+        </ul>
+      </div>
+      <div class="door">
+        <span class="tag">For operations teams</span>
+        <h3>Run leaner</h3>
+        <p>Finance, ops, compliance, risk — teams drowning in manual knowledge work. You want agents doing real work, with the audit trail to prove it.</p>
+        <ul>
+          <li>Production agents for close processes, reconciliation, monitoring, document analysis</li>
+          <li>Governance in code: non-waivable rules applied identically, every time</li>
+          <li>Evals and observability before scale — automation you can show your auditor</li>
+          <li>LLMs only where the job is fuzzy; deterministic where it isn't</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="proof">
+  <div class="wrap">
+    <span class="eyebrow">Proof, not promises</span>
+    <h2>Built and running in production</h2>
+    <div class="grid">
+      <div class="case dark">
+        <span class="k">Underwriting · Fintech</span>
+        <h3>The autonomous underwriter</h3>
+        <p>One command produces a bank-grade, multi-section credit memo in minutes: full banking history, both credit bureaus, tax returns — with non-waivable credit rules applied identically to every file. What a credit analyst does in days, done before the coffee cools.</p>
+      </div>
+      <div class="case">
+        <span class="k">Portfolio risk · Monitoring</span>
+        <h3>Nobody watches the book at 6am. We do now.</h3>
+        <p>A daily portfolio monitor born from a real loss: agents prototyped the signals, deterministic SQL runs them, and a prioritized watchlist lands in Slack before the team logs on. The LLM kept only where judgment matters.</p>
+      </div>
+      <div class="case">
+        <span class="k">Company-wide agent · Ops</span>
+        <h3>One agent, whole company</h3>
+        <p>A Slack agent embedded across risk, ops, and go-to-market — building its own skill library as it learns the business, with governed autonomy and guardrailed writes. RFP analyses that took an afternoon now take minutes.</p>
+      </div>
+      <div class="case">
+        <span class="k">Customer-facing · Product</span>
+        <h3>AI in the product, safely</h3>
+        <p>A customer-facing agent and document parsing in the transaction path — backed by a homegrown eval framework, model fallbacks, and circuit breakers. When a model provider has a bad day, customers never notice.</p>
+      </div>
+      <div class="case dark">
+        <span class="k">Side quest · Full stack</span>
+        <h3>losaltos.space</h3>
+        <p>Turned 2,000 buried WhatsApp messages into a self-maintaining neighborhood directory in four days — 220+ visitors in its first weekend, nightly self-updates, and search that improves itself from its own analytics. Built end to end with AI agents.</p>
+      </div>
+      <div class="case">
+        <span class="k">The discipline</span>
+        <h3>De-LLM-ing: the unfashionable secret</h3>
+        <p>The most valuable move is often removing the LLM: prototype with agents, then compile the workflow down to deterministic code. Faster, cheaper, auditable — and it never hallucinates. Use the LLM to build the automation, then get it out of the loop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bench" id="workbench">
+  <div class="wrap">
+    <span class="eyebrow">The workbench</span>
+    <h2>Not logos I've evaluated.<br>Tools I run in production.</h2>
+    <p class="lead">Recommendations grounded in daily use, not partnership agreements. <strong>Vendor-neutral by practice.</strong></p>
+    <div class="row"><span class="lbl">Coding agents</span><span class="chip hot">Claude Code</span><span class="chip hot">Codex CLI</span><span class="chip hot">Cursor</span></div>
+    <div class="row"><span class="lbl">Agent harnesses</span><span class="chip hot">OpenClaw</span><span class="chip hot">Anthropic Managed Agents</span><span class="chip">Claude Desktop</span></div>
+    <div class="row"><span class="lbl">Tool layer</span><span class="chip hot">MCP</span><span class="chip">FastMCP</span><span class="chip">OAuth</span><span class="chip">guardrailed writes</span></div>
+    <div class="row"><span class="lbl">Models</span><span class="chip">Anthropic Claude</span><span class="chip">Google Gemini</span><span class="chip">OpenAI</span></div>
+    <div class="row"><span class="lbl">Data &amp; infra</span><span class="chip">Snowflake</span><span class="chip">dbt</span><span class="chip">Postgres</span><span class="chip">TypeScript</span><span class="chip">Google Cloud</span></div>
+    <div class="row"><span class="lbl">Evals &amp; observability</span><span class="chip">homegrown eval harness</span><span class="chip">Opik</span></div>
+  </div>
+</section>
+
+<section class="offers" id="services">
+  <div class="wrap">
+    <span class="eyebrow">How we can work together</span>
+    <h2>Engagements that end in running software</h2>
+    <div class="grid">
+      <div class="offer">
+        <span class="k">Start here</span>
+        <h3>AI Opportunity Audit</h3>
+        <p>Map your workflows, data, and product surface. You get a ranked roadmap of AI wins with build/buy calls, an eval plan — and a working prototype of the #1 item, not just the document.</p>
+        <span class="dur">2–3 weeks · fixed fee</span>
+      </div>
+      <div class="offer">
+        <span class="k">Ship faster</span>
+        <h3>Agentic Engineering Transformation</h3>
+        <p>Embedded with your eng org: coding-agent rollout, an MCP tool layer over your systems, AI-native development workflow with review gates. Measured on cycle time.</p>
+        <span class="dur">4–8 weeks · embedded</span>
+      </div>
+      <div class="offer">
+        <span class="k">Run leaner</span>
+        <h3>Ops Automation Build</h3>
+        <p>One production agent or workflow for finance, ops, or compliance — harness, integrations, evals, guardrails, audit trail, and handoff to your team. Pilot to production, end to end.</p>
+        <span class="dur">4–8 weeks · outcome-scoped</span>
+      </div>
+    </div>
+    <p style="margin-top:26px; font-size:15px;">Ongoing: <strong style="color:var(--olive)">Fractional AI Lead</strong> — own the roadmap, review the builds, make the vendor and model calls, report to the board. <a href="#contact" style="color:var(--orange)">Ask about availability →</a></p>
+  </div>
+</section>
+
+<section class="principles">
+  <div class="wrap">
+    <span class="eyebrow">How I work</span>
+    <h2>The unglamorous things that make AI stick</h2>
+    <div class="grid">
+      <div class="pr"><h3>Evals before scale</h3><p>If you can't measure it, you can't ship it. Every workflow gets an eval harness before it gets a wider rollout.</p></div>
+      <div class="pr"><h3>Ship behind flags</h3><p>Working software in weeks, gated and reversible. No big-bang launches, no burned trust.</p></div>
+      <div class="pr"><h3>Governance in code</h3><p>Policy that lives in documents gets skipped. Policy that lives in code gets enforced — identically, every time.</p></div>
+      <div class="pr"><h3>Right-size the intelligence</h3><p>LLMs where the job is fuzzy, deterministic code where it isn't. The best agent is often the one you retire.</p></div>
+      <div class="pr"><h3>Build the tool layer once</h3><p>Wire your systems into one governed tool layer (MCP), then swap models and harnesses freely as the frontier moves.</p></div>
+      <div class="pr"><h3>Knowledge compounds</h3><p>Every engagement leaves behind skills, docs, and evals your team owns — so the system keeps getting better after I leave.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <span class="eyebrow">About</span>
+    <h2>Operator first. Consultant second.</h2>
+    <div class="cols">
+      <div>
+        <p>I'm Rohit Sharma. I've spent 20+ years building lending and data products — as the first product hire at a seed-stage startup that became Funding Circle's US business (56x growth, $9.5B+ originated, IPO on the LSE), as a GM at Plastiq, running D&amp;B's flagship API products, and now as co-founder of Kanmon, a VC-backed embedded lending company.</p>
+        <p>Over the last two years I led Kanmon's transformation into an AI-native company — and built the underwriting agents, portfolio monitors, MCP tool layer, and eval frameworks with my own hands. MS in Computer Science, MBA from UT Austin. I speak both rooms.</p>
+        <p>I also can't stop building: my house runs on six AI agents that manage everything from e-ink dashboards to the Costco list. I write about money and machines at <a href="https://monetarymusings.substack.com" style="color:var(--orange)">Monetary Musings</a>.</p>
+      </div>
+      <div class="side">
+        <span class="k">Career file</span>
+        <ul>
+          <li><strong>Kanmon</strong> — Co-founder · embedded lending · $23M+ raised</li>
+          <li><strong>Funding Circle</strong> — VP Product &amp; Design · 56x growth · IPO</li>
+          <li><strong>Plastiq</strong> — GM, Growth &amp; Retention</li>
+          <li><strong>Dun &amp; Bradstreet</strong> — Director, PM · flagship API line</li>
+          <li><strong>Education</strong> — MS Computer Science · MBA, UT Austin</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--lime)">Get started</span>
+    <h2>Bring me your stalled pilot.<br>Or your blank page.</h2>
+    <p>A 30-minute call. Tell me where AI is stuck in your company — I'll tell you honestly whether I can help, and what I'd do first.</p>
+    <a class="btn" href="mailto:rohit@thesharmas.org?subject=Helicon%20Works%20intro">Book an intro call</a>
+  </div>
+</footer>
+
+<div class="colophon">
+  <div class="wrap">
+    <span>© 2026 Helicon Works · Rohit Sharma</span>
+    <span><a href="https://monetarymusings.substack.com">Substack</a> · <a href="https://www.linkedin.com/in/rohitnsharma">LinkedIn</a> · <a href="https://github.com/thesharmas">GitHub</a></span>
+    <span class="mono" style="font-size:12px;">Helicon: home of the Muses — and of Hari Seldon.</span>
+  </div>
+</div>
+
+</body>
+</html>
