@@ -5,8 +5,8 @@ Website for Helicon Works — Rohit Sharma's AI consulting practice.
 **Thesis:** The model isn't your bottleneck. The harness is.
 
 - Single static `index.html` — no framework, no build step
-- Design system adapted from the "Our AI Journey" deck: cream `#F4F0E6` / ink `#0F0F0D` / olive `#2A3300` / lime `#C8E400` / orange `#C4491E`
-- Fonts: Instrument Sans + IBM Plex Mono
+- Design: "the morning watch" — pre-dawn navy `#0C1220` / morning gray `#F1F3F2` / signal amber `#E8A03C`; signature element is the simulated 6am portfolio-monitor log in the hero
+- Fonts: Schibsted Grotesk (display) + Source Serif 4 (body) + Spline Sans Mono (labels/instrument)
 - Will be served via GitHub Pages at **helicon.works**
 
 ## Local preview
