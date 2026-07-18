@@ -20,7 +20,7 @@ Most AI consulting ends in a deck. This practice ends in production. The thesis:
 - Finance, risk, ops & data: decisions that took days per file now take minutes with hard rules applied identically every time; a quarterly-scale monitoring task now daily and automated (watchlist in Slack before the team logs on); monthly close reconciled to the cent; anyone queries the warehouse in plain English through Slack
 - GTM: collateral and one-pagers produced on demand, on brand; pipeline updates and CRM hygiene handled in Slack; call logs analyzed automatically; every customer-facing number verified against the warehouse
 - The discipline: often the best move is removing the LLM — prototype with agents, ship deterministic code
-- losaltos.space — a self-maintaining neighborhood directory built end to end with agents in four days, serving real neighbors daily
+- losaltos.space — a self-maintaining neighborhood directory serving real neighbors daily: new recommendations flow in automatically, and its search and SEO teach themselves from real usage (agents propose, guardrailed scripts decide)
 
 ## Contact
 
