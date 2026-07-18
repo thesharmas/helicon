@@ -2,6 +2,8 @@
 Operator, builder: Rohit Sharma
 Contact: rohit@thesharmas.org
 Writing: monetarymusings.substack.com
+X: x.com/rnsharma
+LinkedIn: linkedin.com/in/rohitnsharma
 
 /* SITE */
 Stack: one static index.html — no framework, no build step

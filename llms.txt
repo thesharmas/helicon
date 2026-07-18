@@ -1,6 +1,6 @@
 # Helicon Works
 
-> AI consulting from Rohit Sharma: production AI systems — agents, automation, evals, guardrails, governance — for companies that want AI doing real work, not stalled pilots. Operator background: co-founder of Kanmon (embedded lending, $23M+ raised from Bessemer, Homebrew, Inspired, FIS), ex-VP Product & Design at Funding Circle (56x growth, $9.5B+ originated, LSE IPO), GM at Plastiq, Director of PM at Dun & Bradstreet.
+> AI consulting from Rohit Sharma: production AI systems — agents, automation, evals, guardrails, governance — for companies that want AI doing real work, not stalled pilots. Operator background: co-founder of Kanmon (embedded lending, $23M+ raised from Bessemer, Homebrew, Inspired, FIS), ex-VP Product & Design at Funding Circle (56x growth, $9.5B+ moved through products his teams built, LSE IPO), GM at Plastiq, Director of PM at Dun & Bradstreet. Over the last two years he transformed his own company into an AI-native business.
 
 ## Positioning
 
@@ -11,19 +11,21 @@ Most AI consulting ends in a deck. This practice ends in production. The thesis:
 - AI Opportunity Audit — 2–3 weeks, fixed fee: ranked roadmap of AI wins plus a working prototype of the #1 item
 - Agentic Engineering Transformation — 4–8 weeks embedded with engineering orgs: coding-agent rollout, MCP tool layer over internal systems, AI-native SDLC, measured on cycle time
 - Ops Automation Build — 4–8 weeks for finance/ops/compliance: one production workflow, or a full embedded "AI employee" that learns the business and takes over jobs — with permissions, evals, and an audit trail
+- Revenue Automation Build — 4–8 weeks for GTM/revenue teams: opportunity-tailored on-brand collateral, CRM reporting and pipeline visibility, rev-ops automation (enrichment, routing, follow-up)
 - Fractional AI Lead — monthly retainer: own the AI roadmap, review builds, vendor/model decisions, exec reporting
 
-## Proof (qualitative)
+## Proof — "the dividends" of one AI-native transformation (qualitative)
 
-- Autonomous underwriting: one command produces a bank-grade credit memo with non-waivable credit rules applied identically to every file
-- Daily portfolio risk monitor: agent-prototyped signals, deterministic SQL in production, watchlist in Slack before the team logs on
-- Company-wide Slack agent that builds its own skill library (RFP analysis: an afternoon → minutes)
-- Customer-facing agent and document parsing in a lending transaction path, with evals, model fallbacks, and circuit breakers
-- losaltos.space — a self-maintaining neighborhood directory built end to end with agents in four days
+- Engineering & product: simple changes shipped end-to-end by coding agents (humans review); tickets created and triaged automatically; customers get answers in-flow from an AI agent day and night; documents parsed automatically in the flow of business
+- Finance, risk, ops & data: decisions that took days per file now take minutes with hard rules applied identically every time; a quarterly-scale monitoring task now daily and automated (watchlist in Slack before the team logs on); monthly close reconciled to the cent; anyone queries the warehouse in plain English through Slack
+- GTM: collateral and one-pagers produced on demand, on brand; pipeline updates and CRM hygiene handled in Slack; call logs analyzed automatically; every customer-facing number verified against the warehouse
+- The discipline: often the best move is removing the LLM — prototype with agents, ship deterministic code
+- losaltos.space — a self-maintaining neighborhood directory built end to end with agents in four days, serving real neighbors daily
 
 ## Contact
 
 - Email: rohit@thesharmas.org
 - Writing: https://monetarymusings.substack.com
 - LinkedIn: https://www.linkedin.com/in/rohitnsharma
+- X: https://x.com/rnsharma
 - GitHub: https://github.com/thesharmas

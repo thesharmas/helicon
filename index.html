@@ -175,7 +175,11 @@
 
   /* Doors + offers */
   .doors { background: var(--paper-2); border-bottom: 1px solid var(--line); }
-  .door-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
+  .door-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; }
+  .door.wide { grid-column: 1 / -1; }
+  .wide-main { display: grid; grid-template-columns: 1fr 1.5fr; gap: 28px; margin-bottom: 22px; }
+  .wide-main .desc { align-self: center; }
+  .dur { font-family: 'Spline Sans Mono', monospace; font-size: 13px; color: var(--amber-deep); margin-top: 6px; }
   .door { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 32px 30px; display: flex; flex-direction: column; }
   .door .tag { font-family: 'Spline Sans Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber-deep); margin-bottom: 12px; }
   .door h3 { font-size: 24px; margin-bottom: 12px; }
@@ -189,19 +193,18 @@
     font-size: 13px; color: var(--head);
   }
   .door .engage strong { font-weight: 500; color: var(--amber-deep); }
-  .startline { margin-top: 30px; max-width: 760px; font-size: 16.5px; }
-  .startline strong { font-family: 'Schibsted Grotesk', sans-serif; color: var(--head); font-size: 16px; }
 
-  /* Proof */
-  .cases .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-  .case { border: 1px solid var(--line); border-radius: 8px; padding: 26px 26px 24px; background: var(--paper); }
-  .case.dark { background: var(--ink); border-color: transparent; }
-  .case.dark h3 { color: var(--paper); }
-  .case h3 a { color: inherit; }
-  .case.dark p { color: var(--dim); }
-  .case .k { font-family: 'Spline Sans Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber-deep); display: block; margin-bottom: 12px; }
-  .case.dark .k { color: var(--amber); }
-  .case p { font-size: 15.5px; }
+  /* Dividends */
+  .div-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .div-col { border-top: 2px solid var(--amber); padding-top: 18px; }
+  .div-col .k, .div-strip .k { font-family: 'Spline Sans Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber-deep); display: block; margin-bottom: 12px; }
+  .div-col .flag { font-weight: 600; color: var(--head); margin-bottom: 6px; }
+  .div-col ul { list-style: none; }
+  .div-col li { font-size: 15px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .div-col li:last-child { border-bottom: none; }
+  .div-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 44px; padding-top: 26px; border-top: 1px solid var(--line); }
+  .div-strip p { font-size: 15px; }
+  .div-strip a { color: var(--amber-deep); }
 
   /* Workbench + rules */
   .bench { background: var(--ink); }
@@ -236,6 +239,9 @@
   .side li { font-size: 14.5px; padding: 8px 0; border-bottom: 1px solid var(--line); }
   .side li:last-child { border-bottom: none; }
   .side strong { font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; }
+  .rail { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: baseline; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .rail-k { font-family: 'Spline Sans Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber-deep); }
+  .marks { font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.12em; color: var(--head); opacity: 0.5; }
 
   /* Footer CTA — dawn again */
   .foot {
@@ -250,11 +256,14 @@
   .colophon .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
   .colophon span, .colophon a { font-size: 13px; color: rgba(241, 243, 242, 0.5); text-decoration: none; }
   .colophon a:hover { color: var(--amber); }
+  .socials { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .socials svg { width: 15px; height: 15px; fill: rgba(241, 243, 242, 0.5); display: block; }
+  .socials a:hover svg { fill: var(--amber); }
 
   @media (max-width: 840px) {
     .hero .wrap { grid-template-columns: 1fr; gap: 44px; }
     .hero { padding: 68px 0 76px; }
-    .door-grid, .cases .grid, .rules, .about .cols { grid-template-columns: 1fr; }
+    .door-grid, .div-grid, .div-strip, .wide-main, .rules, .about .cols { grid-template-columns: 1fr; }
     .cred .wrap { grid-template-columns: 1fr 1fr; }
     .bench .row .lbl { flex-basis: 100%; }
     .nav a:not(.cta) { display: none; }
@@ -282,7 +291,7 @@
     <div>
       <span class="label">AI consulting, from an operator</span>
       <h1>Most AI consulting ends in a deck. <em>Mine ends in production.</em></h1>
-      <p class="sub">I'm <strong>Rohit Sharma</strong> — 20 years operating fintech companies, the last two building AI that underwrites loans, watches a portfolio every morning, and answers customers. I build working systems, not recommendations.</p>
+      <p class="sub">I'm <strong>Rohit Sharma</strong> — 20 years operating fintech companies. I spent the last two transforming one into an AI-native business, where AI does real work every day. I build working systems, not recommendations.</p>
       <a class="btn" href="#contact">Book an intro call</a>
       <a class="btn ghost" href="#proof">See the proof</a>
     </div>
@@ -304,7 +313,7 @@
   <div class="wrap">
     <div><span class="num">$23M+</span><span class="lbl">raised as Kanmon co-founder — Bessemer, Homebrew, Inspired, FIS</span></div>
     <div><span class="num">56x</span><span class="lbl">growth as VP Product, Funding Circle — through IPO</span></div>
-    <div><span class="num">$9.5B+</span><span class="lbl">loans originated on products my teams built</span></div>
+    <div><span class="num">$9.5B+</span><span class="lbl">moved through products my teams built</span></div>
     <div><span class="num">20+ yrs</span><span class="lbl">fintech &amp; data products — D&amp;B, Plastiq, Dell</span></div>
   </div>
 </div>
@@ -314,7 +323,7 @@
     <span class="label">How I think</span>
     <p class="big">Every company has tried AI. Almost none have AI they rely on. The difference isn't the model — <strong>it's the harness</strong>: the tool layer, the evals, the guardrails, the governance that let AI do real work safely.</p>
     <div class="rest">
-      <p>I've built that end to end — pilots that became systems a lender relied on every day. No handoff to "implementation partners": I build the harness with you, strategy through code.</p>
+      <p>I've built that end to end — pilots that became systems a business relied on every day. No handoff to "implementation partners": I build the harness with you, strategy through code.</p>
     </div>
   </div>
 </section>
@@ -322,7 +331,7 @@
 <section class="doors" id="services">
   <div class="wrap">
     <span class="label">Work with me</span>
-    <h2>Two doors in. Both end in running software.</h2>
+    <h2>Three doors in. All end in running software.</h2>
     <div class="door-grid">
       <div class="door">
         <span class="tag">For engineering orgs</span>
@@ -346,46 +355,74 @@
         </ul>
         <p class="engage"><strong>Ops Automation Build</strong> · 4–8 wks · one workflow, or a full AI employee</p>
       </div>
+      <div class="door">
+        <span class="tag">For GTM &amp; revenue teams</span>
+        <h3>Sell more</h3>
+        <p>Revenue teams buried in manual motion — decks, data entry, reporting. Work that steals selling time.</p>
+        <ul>
+          <li>Opportunity-tailored decks, on brand, in minutes not days</li>
+          <li>CRM reporting and pipeline visibility, automated</li>
+          <li>Rev-ops workflows: enrichment, routing, follow-up</li>
+        </ul>
+        <p class="engage"><strong>Revenue Automation Build</strong> · 4–8 wks · pilot → production</p>
+      </div>
+      <div class="door wide">
+        <div class="wide-main">
+          <div>
+            <span class="tag">Not sure which door? · Start here</span>
+            <h3>AI Opportunity Audit</h3>
+            <p class="dur">2–3 wks · fixed fee</p>
+          </div>
+          <p class="desc">A ranked roadmap of AI wins across your company — plus a working prototype of the #1 item, not just a document.</p>
+        </div>
+        <p class="engage">Ongoing: <strong>Fractional AI Lead</strong> · monthly retainer — roadmap, builds, vendor and model calls</p>
+      </div>
     </div>
-    <p class="startline"><strong>Not sure which door?</strong> Start with the <strong>AI Opportunity Audit</strong> — 2–3 weeks, fixed fee. A ranked roadmap of AI wins, plus a working prototype of the #1 item. For ongoing help, ask about the <strong>Fractional AI Lead</strong> retainer.</p>
   </div>
 </section>
 
-<section class="cases" id="proof">
+<section class="divs" id="proof">
   <div class="wrap">
-    <span class="label">Proof, not promises</span>
-    <h2>Built, shipped, still running</h2>
-    <p class="sec-lead">Most of it built at the fintech I co-founded — pilots that became systems the business relies on daily.</p>
-    <div class="grid">
-      <div class="case dark">
-        <span class="k">Underwriting</span>
-        <h3>The autonomous underwriter</h3>
-        <p>One command produces a bank-grade credit memo — non-waivable rules applied identically to every file.</p>
+    <span class="label">The dividends</span>
+    <h2>What going AI-native actually bought — function by function.</h2>
+    <p class="sec-lead">One company, two years — the doors above, delivered.</p>
+    <div class="div-grid">
+      <div class="div-col">
+        <span class="k">Ship faster · engineering &amp; product</span>
+        <p class="flag">Simple changes shipped end-to-end by coding agents — humans review, agents do.</p>
+        <ul>
+          <li>Tickets created and triaged automatically</li>
+          <li>Customers get answers in-flow from an AI agent, day and night</li>
+          <li>Documents parsed automatically, in the flow of business</li>
+        </ul>
       </div>
-      <div class="case">
-        <span class="k">Portfolio risk</span>
-        <h3>Nobody watches the book at 6am. We do now.</h3>
-        <p>A prioritized risk watchlist lands in Slack before the team logs on.</p>
+      <div class="div-col">
+        <span class="k">Run leaner · finance, risk, ops &amp; data</span>
+        <p class="flag">Decisions that took days per file now take minutes — same rules every time.</p>
+        <ul>
+          <li>A quarterly-scale monitoring task, now daily and automated</li>
+          <li>Monthly close reconciled to the cent; memos fact-checked before they ship</li>
+          <li>Anyone queries the warehouse in plain English, through Slack</li>
+        </ul>
       </div>
-      <div class="case">
-        <span class="k">The AI employee</span>
-        <h3>One agent, whole company</h3>
-        <p>An embedded agent across risk, ops, and go-to-market that builds its own skills as it learns. RFP analysis went from an afternoon to minutes.</p>
+      <div class="div-col">
+        <span class="k">Sell more · GTM</span>
+        <p class="flag">Collateral and one-pagers produced on demand, on brand.</p>
+        <ul>
+          <li>Pipeline updates and CRM hygiene handled in Slack</li>
+          <li>Call logs analyzed automatically</li>
+          <li>Every customer-facing number verified against the warehouse</li>
+        </ul>
       </div>
-      <div class="case">
-        <span class="k">Customer-facing</span>
-        <h3>AI in the product, safely</h3>
-        <p>An agent in the transaction path, with fallbacks and circuit breakers — model outages customers never see.</p>
+    </div>
+    <div class="div-strip">
+      <div>
+        <span class="k">On the side</span>
+        <p><a href="https://losaltos.space">losaltos.space</a> — a self-maintaining neighborhood directory, built with agents in four days, serving real neighbors daily.</p>
       </div>
-      <div class="case dark">
-        <span class="k">Side quest</span>
-        <h3><a href="https://losaltos.space">losaltos.space</a></h3>
-        <p>2,000 buried WhatsApp messages became a self-maintaining neighborhood directory in four days.</p>
-      </div>
-      <div class="case">
+      <div>
         <span class="k">The discipline</span>
-        <h3>De-LLM-ing</h3>
-        <p>Often the best move is removing the LLM: prototype with agents, ship deterministic code.</p>
+        <p>Often the best move is <em>removing</em> the LLM: prototype with agents, ship deterministic code.</p>
       </div>
     </div>
   </div>
@@ -417,9 +454,8 @@
     <h2>Operator first. Consultant second.</h2>
     <div class="cols">
       <div>
-        <p>Twenty years building lending and data products: first product hire at what became Funding Circle US (56x growth, $9.5B+ originated, LSE IPO), GM at Plastiq, D&amp;B's flagship API line — now co-founder of Kanmon, a VC-backed embedded lender.</p>
-        <p>Over two years I led Kanmon's shift to AI-native — and built the underwriting agents, tool layer, and eval frameworks with my own hands. MS in Computer Science, MBA. I speak both rooms.</p>
-        <p>My house runs on six AI agents. I write about money and machines at <a href="https://monetarymusings.substack.com">Monetary Musings</a>.</p>
+        <p>Twenty years as an operator — first product hire through an IPO, GM, co-founder. I spent the last two transforming my own company into an AI-native business, building the agents, tool layer, and evals with my own hands.</p>
+        <p>MS in Computer Science, MBA — I speak both rooms. My house runs on six AI agents. I write about money and machines at <a href="https://monetarymusings.substack.com">Monetary Musings</a>.</p>
       </div>
       <div class="side">
         <span class="k">Career file</span>
@@ -431,6 +467,10 @@
           <li><strong>Education</strong> — MS Computer Science · MBA</li>
         </ul>
       </div>
+    </div>
+    <div class="rail">
+      <span class="rail-k">Operator at</span>
+      <span class="marks">KANMON · FUNDING CIRCLE · PLASTIQ · DUN &amp; BRADSTREET · DELL</span>
     </div>
   </div>
 </section>
@@ -447,7 +487,13 @@
 <div class="colophon">
   <div class="wrap">
     <span>© 2026 Helicon Works · Rohit Sharma</span>
-    <span><a href="https://monetarymusings.substack.com">Substack</a> · <a href="https://www.linkedin.com/in/rohitnsharma">LinkedIn</a> · <a href="https://github.com/thesharmas">GitHub</a> · <a href="/llms.txt" class="mono">llms.txt</a> · <a href="/humans.txt" class="mono">humans.txt</a></span>
+    <span class="socials">
+      <a href="https://www.linkedin.com/in/rohitnsharma" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.16h4.56V23H.22zM8.34 8.16h4.37v2.02h.06c.61-1.15 2.1-2.37 4.32-2.37 4.62 0 5.47 3.04 5.47 6.99V23h-4.56v-7.21c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8V23H8.34z"/></svg></a>
+      <a href="https://x.com/rnsharma" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41z"/></svg></a>
+      <a href="https://monetarymusings.substack.com" aria-label="Substack"><svg viewBox="0 0 24 24"><path d="M1.46 2.28h21.08V4.8H1.46zM1.46 6.16h21.08v2.52H1.46zM1.46 11.1V24l10.54-5.92L22.54 24V11.1z"/></svg></a>
+      <a href="mailto:rohit@thesharmas.org" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M12 12.71 1.15 5.19A2 2 0 0 1 3 4h18c.83 0 1.54.5 1.85 1.19zM12 15.15 23 7.5V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7.5z"/></svg></a>
+      <a href="https://github.com/thesharmas">GitHub</a> · <a href="/llms.txt" class="mono">llms.txt</a> · <a href="/humans.txt" class="mono">humans.txt</a>
+    </span>
     <span class="mono" style="font-size:12px;">Helicon: home of the Muses — and of Hari Seldon.</span>
   </div>
 </div>
