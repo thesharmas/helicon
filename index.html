@@ -605,6 +605,35 @@
         cap('outbound_clicked', { href: el.href });
       });
     });
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        cap('email_clicked', {
+          section: (el.closest('section,header,footer,div[class]') || {}).className || 'unknown'
+        });
+      });
+    });
+    document.querySelectorAll('.nav a[href^="#"]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        cap('nav_clicked', { target: el.getAttribute('href'), label: el.textContent.trim() });
+      });
+    });
+    document.querySelectorAll('a[href$=".txt"]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        cap('resource_clicked', { href: el.getAttribute('href') });
+      });
+    });
+    // section visibility (once per section per pageload, 40% in view)
+    if ('IntersectionObserver' in window) {
+      var seenSections = {};
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          var id = en.target.id || (en.target.className + '').split(' ')[0] || 'unknown';
+          if (!seenSections[id]) { seenSections[id] = true; cap('section_viewed', { section: id }); }
+        });
+      }, { threshold: 0.4 });
+      document.querySelectorAll('header.hero, section, footer.foot').forEach(function (s) { io.observe(s); });
+    }
     // scroll depth (25/50/75/100)
     var marks = [25, 50, 75, 100], fired = {};
     window.addEventListener('scroll', function () {
