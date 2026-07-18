@@ -4,7 +4,7 @@
 
 ## Positioning
 
-"What should we do with AI?" — the answer isn't a deck, it's working software. Most AI consulting ends in a deck; this practice ends in production. The thesis: the model isn't the bottleneck — the harness is (the tool layer, evals, guardrails, and governance that let AI do real work safely).
+"What should we do with AI?" — the answer isn't a deck, it's working software. Most AI consulting ends in a deck; this practice ends in production. The thesis: the model isn't the bottleneck — the harness is. A model is raw horsepower; the harness (the connections to your systems, the testing, the guardrails, the governance) is what turns it into work you can trust.
 
 ## Offers
 
