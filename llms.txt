@@ -8,7 +8,7 @@
 
 ## Offers
 
-- AI Opportunity Audit — 2–3 weeks, fixed fee: ranked roadmap of AI wins plus a working prototype of the #1 item
+- AI Opportunity Audit — 2–3 weeks, fixed fee: ranked roadmap of AI wins plus a working prototype of the first quick win
 - Agentic Engineering Transformation — embedded with engineering orgs: coding-agent rollout, MCP tool layer over internal systems, AI-native SDLC, measured on cycle time
 - Ops Automation Build — for finance/ops teams: one production workflow, or a full embedded "AI employee" that learns the business and takes over jobs — with permissions, evals, and an audit trail
 - Revenue Automation Build — for GTM/revenue teams: opportunity-tailored on-brand collateral, CRM reporting and pipeline visibility, rev-ops automation (enrichment, routing, follow-up)
