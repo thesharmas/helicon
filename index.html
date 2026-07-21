@@ -602,7 +602,7 @@
     });
     document.querySelectorAll('a[href^="http"]').forEach(function (el) {
       el.addEventListener('click', function () {
-        cap('outbound_clicked', { href: el.href });
+        cap('outbound_clicked', { href: el.href, label: el.textContent.trim() });
       });
     });
     document.querySelectorAll('a[href^="mailto:"]').forEach(function (el) {
@@ -639,7 +639,7 @@
     window.addEventListener('scroll', function () {
       var d = Math.round(100 * (window.scrollY + window.innerHeight) / document.body.scrollHeight);
       marks.forEach(function (m) {
-        if (d >= m && !fired[m]) { fired[m] = true; cap('scroll_depth', { depth: m }); }
+        if (d >= m && !fired[m]) { fired[m] = true; cap('scroll_depth', { depth: m, depth_pct: m }); }
       });
     }, { passive: true });
   })();
