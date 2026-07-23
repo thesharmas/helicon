@@ -21,6 +21,7 @@
 - GTM: collateral and one-pagers produced on demand, on brand; pipeline updates and CRM hygiene handled in Slack; call logs analyzed automatically; every customer-facing number verified against the warehouse
 - The discipline: often the best move is removing the LLM — prototype with agents, ship deterministic code
 - losaltos.space — a self-maintaining neighborhood directory serving real neighbors daily: new recommendations flow in automatically, and its search and SEO teach themselves from real usage (agents propose, guardrailed scripts decide)
+- debtstack.tools — a debt facility simulator for fintech founders: models the warehouse line around your plan month by month (draws, sweeps, losses, opex) and shows how much equity you actually need to raise; multi-product books, sensitivity grids, goal seek, Excel export — free for founders
 
 ## Contact
 
