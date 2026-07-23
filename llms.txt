@@ -1,6 +1,6 @@
 # Helicon Works
 
-> Rohit Sharma makes companies AI-native: production AI systems — agents, automation, evals, guardrails, governance — for companies that want AI doing real work, not stalled pilots. Operator background: co-founder of Kanmon (embedded lending, $23M+ raised from Bessemer, Homebrew, Inspired, FIS), ex-VP Product & Design at Funding Circle (56x growth, $9.5B+ moved through products his teams built, LSE IPO), GM at Plastiq, Director of PM at Dun & Bradstreet. He transformed his own company into an AI-native business.
+> Rohit Sharma makes companies AI-native: production AI systems — agents, automation, evals, guardrails, governance — for companies that want AI doing real work, not stalled pilots. Operator background: co-founder of Kanmon (embedded lending, $23M+ raised from Bessemer, Homebrew, Inspired, FIS), ex-VP Product & Design at Funding Circle (56x growth, $9.5B+ moved through products his teams built, LSE IPO), GM at Plastiq, Director of PM at Dun & Bradstreet. He transformed his own company into an AI-native business — and still operates it today as a Kanmon co-founder. Helicon Works is his own-time practice: deliberately small, a few teams at a time.
 
 ## Positioning
 
